@@ -6,6 +6,7 @@ import { Footer } from "@/components/storefront/Footer";
 import { Container, Section } from "@/components/ui/Layout";
 import { Button } from "@/components/ui/Button";
 import { ProductCard } from "@/components/ui/ProductCard";
+<<<<<<< HEAD
 import { getProducts, getFabricCategories } from "@/server/services/catalog";
 import { fabricCategories as fabricImageMap } from "@/lib/sample-data";
 
@@ -17,6 +18,11 @@ export default async function HomePage() {
     getFabricCategories(),
   ]);
   const featured = newArrivals.slice(0, 4);
+=======
+import { sampleNewArrivals, fabricCategories } from "@/lib/sample-data";
+
+export default function HomePage() {
+>>>>>>> 2dbe9de1761928c1534f5e2cb75c28dc3284ff88
   return (
     <>
       <AnnouncementBar />
@@ -56,6 +62,7 @@ export default async function HomePage() {
               </Link>
             </div>
             <div className="grid grid-cols-2 gap-x-6 gap-y-12 md:grid-cols-4">
+<<<<<<< HEAD
               {featured.length === 0 ? (
                 <p className="col-span-full py-12 text-center font-sans text-sm text-charcoal/60">
                   New arrivals will appear here once products are published in Admin.
@@ -63,6 +70,11 @@ export default async function HomePage() {
               ) : (
                 featured.map((p) => <ProductCard key={p.slug} product={p} />)
               )}
+=======
+              {sampleNewArrivals.map((p) => (
+                <ProductCard key={p.slug} product={p} />
+              ))}
+>>>>>>> 2dbe9de1761928c1534f5e2cb75c28dc3284ff88
             </div>
           </Container>
         </Section>
@@ -72,6 +84,7 @@ export default async function HomePage() {
           <Container>
             <h2 className="mb-10 font-serif text-3xl text-ink">Shop by Fabric</h2>
             <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+<<<<<<< HEAD
               {categories.map((c) => {
                 const fallback = fabricImageMap.find((f) => f.slug === c.slug)?.imageUrl;
                 const imageUrl = c.imageUrl ?? fallback ?? "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=600&q=80";
@@ -89,6 +102,21 @@ export default async function HomePage() {
                   </Link>
                 );
               })}
+=======
+              {fabricCategories.map((f) => (
+                <Link key={f.slug} href={`/fabric/${f.slug}`} className="group relative block aspect-[3/4]">
+                  <Image
+                    src={f.imageUrl}
+                    alt={f.name}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    sizes="(min-width: 768px) 25vw, 50vw"
+                  />
+                  <div className="absolute inset-0 bg-ink/20" />
+                  <p className="absolute bottom-5 left-5 font-serif text-xl text-ivory">{f.name}</p>
+                </Link>
+              ))}
+>>>>>>> 2dbe9de1761928c1534f5e2cb75c28dc3284ff88
             </div>
           </Container>
         </Section>

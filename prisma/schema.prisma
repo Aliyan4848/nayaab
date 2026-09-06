@@ -761,6 +761,7 @@ model AuditLog {
 
   @@map("audit_logs")
 }
+<<<<<<< HEAD
 
 // Atomic per-year counter backing human-readable order numbers
 // (NAY-2026-000001). Incremented inside the same transaction as order
@@ -771,3 +772,5 @@ model OrderCounter {
 
   @@map("order_counters")
 }
+=======
+>>>>>>> 2dbe9de1761928c1534f5e2cb75c28dc3284ff88

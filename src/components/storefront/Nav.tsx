@@ -1,8 +1,12 @@
 import Link from "next/link";
+<<<<<<< HEAD
 import { cookies } from "next/headers";
 import { Container } from "@/components/ui/Layout";
 import { CART_COOKIE } from "@/lib/cart-session";
 import { getCartItemCount } from "@/server/services/cart";
+=======
+import { Container } from "@/components/ui/Layout";
+>>>>>>> 2dbe9de1761928c1534f5e2cb75c28dc3284ff88
 
 const links = [
   { href: "/new-arrivals", label: "New Arrivals" },
@@ -12,10 +16,14 @@ const links = [
   { href: "/sale", label: "Sale" },
 ];
 
+<<<<<<< HEAD
 export async function Nav() {
   const sessionId = cookies().get(CART_COOKIE)?.value;
   const cartCount = await getCartItemCount(sessionId);
 
+=======
+export function Nav() {
+>>>>>>> 2dbe9de1761928c1534f5e2cb75c28dc3284ff88
   return (
     <header className="border-b border-border bg-ivory">
       <Container className="flex h-20 items-center justify-between">
@@ -46,7 +54,11 @@ export async function Nav() {
             Account
           </Link>
           <Link href="/cart" aria-label="Cart">
+<<<<<<< HEAD
             Cart{cartCount > 0 ? ` (${cartCount})` : ""}
+=======
+            Cart
+>>>>>>> 2dbe9de1761928c1534f5e2cb75c28dc3284ff88
           </Link>
         </div>
       </Container>

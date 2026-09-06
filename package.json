@@ -9,9 +9,12 @@
     "lint": "next lint",
     "postinstall": "prisma generate"
   },
+<<<<<<< HEAD
   "prisma": {
     "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
   },
+=======
+>>>>>>> 2dbe9de1761928c1534f5e2cb75c28dc3284ff88
   "dependencies": {
     "next": "14.2.5",
     "react": "18.3.1",
@@ -29,7 +32,10 @@
     "postcss": "8.4.41",
     "autoprefixer": "10.4.19",
     "prisma": "5.18.0",
+<<<<<<< HEAD
     "ts-node": "10.9.2",
+=======
+>>>>>>> 2dbe9de1761928c1534f5e2cb75c28dc3284ff88
     "eslint": "8.57.0",
     "eslint-config-next": "14.2.5"
   }
