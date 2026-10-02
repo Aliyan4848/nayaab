@@ -35,8 +35,8 @@ export async function addToCart(sessionId: string, productId: string, quantity: 
 
   const cart = await getOrCreateCartBySession(sessionId);
 
-  const existingItem = await prisma.cartItem.findUnique({
-    where: { cartId_productId_variantId: { cartId: cart.id, productId, variantId: null } },
+  const existingItem = await prisma.cartItem.findFirst({
+    where: { cartId: cart.id, productId, variantId: null },
   });
 
   if (existingItem) {
