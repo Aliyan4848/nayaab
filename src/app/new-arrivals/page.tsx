@@ -9,7 +9,7 @@ export const metadata = { title: "New Arrivals — NAYAAB" };
 
 // No per-request params here — cache and refresh periodically rather than
 // forcing a DB round trip on every request.
-export const revalidate = 60;
+export const dynamic = "force-dynamic";
 
 export default async function NewArrivalsPage() {
   const all = await getProducts({ sort: "newest" });
