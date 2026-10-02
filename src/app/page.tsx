@@ -9,7 +9,7 @@ import { ProductCard } from "@/components/ui/ProductCard";
 import { getProducts, getFabricCategories } from "@/server/services/catalog";
 import { fabricCategories as fabricImageMap } from "@/lib/sample-data";
 
-export const revalidate = 60;
+export const dynamic = "force-dynamic";
 
 export default async function HomePage() {
   const [newArrivals, categories] = await Promise.all([
